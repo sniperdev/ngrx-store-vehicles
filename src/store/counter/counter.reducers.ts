@@ -9,7 +9,7 @@ const initialState: ICounterState = {
   value: 0,
 }
 
-export const counterReducers = createReducer(
+export const counterReducer = createReducer(
   initialState,
   on(
     CounterActions.increment,

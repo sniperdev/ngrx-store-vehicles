@@ -6,13 +6,15 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore } from '@ngrx/router-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { counterReducers } from '../store/counter/counter.reducers'
+import { counterReducer } from '../store/counter/counter.reducers'
+import { vehiclesReducer } from '../store/vehicles/vehicles.reducers'
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideStore({
-      counter: counterReducers
+      counter: counterReducer,
+      vehicles: vehiclesReducer
     }),
     provideEffects(),
     provideRouterStore(),

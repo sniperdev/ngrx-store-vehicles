@@ -1,10 +1,10 @@
 <div class="counter-container">
-  <input type="text" pInputText/>
+  <input type="text" pInputText [value]="counter$ | async" readonly/>
   <div class="counter-container__buttons">
-    <p-button type="button" severity="danger">
+    <p-button (click)="decrement()" type="button" severity="danger">
       <i class="pi pi-minus"></i>
     </p-button>
-    <p-button type="button" severity="success">
+    <p-button (click)="increment()" type="button" severity="success">
       <i class="pi pi-plus"></i>
     </p-button>
   </div>

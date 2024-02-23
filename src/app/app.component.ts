@@ -1,13 +1,27 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
+import {MenubarModule} from "primeng/menubar";
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MenubarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ngrx-store-vehicles';
+  items: MenuItem[] = [
+    {
+      label: 'Counter',
+      routerLink: 'counter',
+    },
+  ]
+
+  constructor(private router: Router) {
+  }
+
+  handleClickLogo(){
+    this.router.navigate(['']);
+  }
 }

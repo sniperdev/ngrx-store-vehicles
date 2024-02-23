@@ -6,7 +6,9 @@ import {MenuItem} from "primeng/api";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenubarModule],
+  imports: [
+    RouterOutlet,
+    MenubarModule,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
